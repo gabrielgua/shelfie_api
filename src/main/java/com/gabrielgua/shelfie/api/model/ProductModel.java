@@ -17,6 +17,7 @@ public class ProductModel {
 
     private Long id;
     private String sku;
+    private String name;
     private BigDecimal price;
     private String description;
     private String imageUrl;

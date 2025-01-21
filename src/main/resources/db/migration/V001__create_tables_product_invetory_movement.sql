@@ -15,7 +15,7 @@ create table inventory(
     id bigint not null auto_increment,
     product_id bigint not null,
     active tinyint(1) not null,
-    current_quantity int not null,
+    current_quantity int default 0,
     minimum_quantity int default 0,
     last_updated timestamp default now(),
 
