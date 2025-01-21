@@ -22,15 +22,14 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @JdbcTypeCode(Types.VARCHAR)
-    private UUID code;
+    private String sku;
 
     private String name;
     private BigDecimal price;
     private String description;
     private String imageUrl;
 
-    @OneToOne
+    @OneToOne(mappedBy = "product")
     private Inventory inventory;
 
     @CreationTimestamp

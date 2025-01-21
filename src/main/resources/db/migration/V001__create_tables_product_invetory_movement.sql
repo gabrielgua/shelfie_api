@@ -1,6 +1,6 @@
 create table product(
     id bigint not null auto_increment,
-    code varchar(36) not null,
+    sku varchar(36) not null unique,
     name varchar(255) not null,
     price decimal(10,2) not null,
     description text,

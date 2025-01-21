@@ -26,5 +26,5 @@ public class Movement {
     @CreationTimestamp
     private OffsetDateTime movementDate;
 
-    private String observation;
+    private String remarks;
 }
