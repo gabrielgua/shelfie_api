@@ -13,10 +13,11 @@ public class InventoryService {
     private final InventoryRepository repository;
 
 
-    public Inventory save(Product product) {
+    public Inventory save(Product product, int minimumQuantity) {
         var inventory = new Inventory();
         inventory.setActive(false);
         inventory.setProduct(product);
+        inventory.setMinimumQuantity(minimumQuantity);
 
         return repository.save(inventory);
     }

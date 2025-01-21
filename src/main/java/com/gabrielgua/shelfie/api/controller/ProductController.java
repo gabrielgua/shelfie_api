@@ -29,7 +29,7 @@ public class ProductController {
     @ResponseStatus(HttpStatus.CREATED)
     public ProductModel create(@RequestBody ProductRequest request) {
         var product = mapper.toEntity(request);
-        var inventory = inventoryService.save(productService.save(product));
+        var inventory = inventoryService.save(productService.save(product), request.getMinimumQuantity());
         product.setInventory(inventory);
 
         return mapper.toModel(product);

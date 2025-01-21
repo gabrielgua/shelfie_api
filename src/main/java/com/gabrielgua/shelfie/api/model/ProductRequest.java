@@ -27,4 +27,6 @@ public class ProductRequest {
 
     private String imageUrl;
     private String description;
+
+    private int minimumQuantity;
 }
