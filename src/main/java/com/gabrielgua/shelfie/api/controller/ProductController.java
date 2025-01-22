@@ -9,6 +9,7 @@ import com.gabrielgua.shelfie.domain.model.Product;
 import com.gabrielgua.shelfie.domain.service.InventoryService;
 import com.gabrielgua.shelfie.domain.service.ProductService;
 import jakarta.validation.Valid;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,11 @@ public class ProductController {
     @GetMapping
     public List<ProductModel> getAll() {
         return mapper.toCollectionModel(productService.list());
+    }
+
+    @GetMapping("/{productId}")
+    public ProductModel findById(@PathVariable Long productId) {
+        return mapper.toModelExtended(productService.findById(productId));
     }
 
     @PostMapping
