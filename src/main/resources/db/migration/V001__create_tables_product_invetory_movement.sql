@@ -20,7 +20,7 @@ create table inventory(
     last_updated timestamp default now(),
 
     primary key (id),
-    constraint fk_inventory_product foreign key (product_id) references product (id)
+    constraint fk_inventory_product foreign key (product_id) references product (id) on delete cascade
 );
 
 create table movement(
@@ -32,5 +32,5 @@ create table movement(
     remarks text,
 
     primary key (id),
-    constraint fk_movement_product foreign key (product_id) references product (id)
+    constraint fk_movement_product foreign key (product_id) references product (id) on delete cascade
 );

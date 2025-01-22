@@ -17,10 +17,12 @@ public class Movement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Product product;
 
     private int movementQuantity;
+
+    @Enumerated(EnumType.STRING)
     private MovementType movementType;
 
     @CreationTimestamp

@@ -28,4 +28,9 @@ public class ProductService {
     public Product save(Product product) {
         return repository.save(product);
     }
+
+    @Transactional
+    public void delete(Product product) {
+        repository.delete(product);
+    }
 }

@@ -10,6 +10,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.math.BigDecimal;
 import java.sql.Types;
 import java.time.OffsetDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Data
@@ -31,6 +33,9 @@ public class Product {
 
     @OneToOne(mappedBy = "product")
     private Inventory inventory;
+
+    @OneToMany(mappedBy = "product")
+    private Set<Movement> movements = new HashSet<>();
 
     @CreationTimestamp
     private OffsetDateTime createdAt;

@@ -5,6 +5,7 @@ import com.gabrielgua.shelfie.api.mapper.UpdateMapper;
 import com.gabrielgua.shelfie.api.model.ProductModel;
 import com.gabrielgua.shelfie.api.model.ProductRequest;
 import com.gabrielgua.shelfie.api.model.ProductUpdate;
+import com.gabrielgua.shelfie.domain.model.Product;
 import com.gabrielgua.shelfie.domain.service.InventoryService;
 import com.gabrielgua.shelfie.domain.service.ProductService;
 import jakarta.validation.Valid;
@@ -36,7 +37,7 @@ public class ProductController {
         var inventory = inventoryService.save(productService.save(product), request.getMinimumQuantity());
         product.setInventory(inventory);
 
-        return mapper.toModel(product);
+        return mapper.toModelExtended(product);
     }
 
     @PutMapping("/{productId}")
@@ -45,5 +46,11 @@ public class ProductController {
         updateMapper.copyNonNullProperties(update, product);
 
         return mapper.toModel(productService.save(product));
+    }
+
+    @DeleteMapping("/{productId}")
+    public void delete(@PathVariable Long productId) {
+        var product = productService.findById(productId);
+        productService.delete(product);
     }
 }

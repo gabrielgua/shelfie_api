@@ -21,6 +21,7 @@ public class ProductModel {
     private BigDecimal price;
     private String description;
     private String imageUrl;
+    private InventoryModel inventory;
 
     private OffsetDateTime createdAt;
     private OffsetDateTime updatedAt;
