@@ -1,5 +1,7 @@
 package com.gabrielgua.shelfie.domain.service;
 
+import com.gabrielgua.shelfie.domain.model.Inventory;
+import com.gabrielgua.shelfie.domain.model.Movement;
 import com.gabrielgua.shelfie.domain.model.Product;
 import com.gabrielgua.shelfie.domain.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -28,6 +30,8 @@ public class ProductService {
     public Product findBySku(String productSku) {
         return repository.findBySku(productSku).orElseThrow(() -> new RuntimeException("Not found for sku"));
     }
+
+
 
     @Transactional
     public Product save(Product product) {

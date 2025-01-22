@@ -16,8 +16,8 @@ public class InventoryModel {
     private Long id;
     private ProductModel product;
     private boolean active;
-    private int currentQuantity;
-    private int minimumQuantity;
+    private Integer currentQuantity;
+    private Integer minimumQuantity;
 
     private OffsetDateTime lastUpdated;
 }

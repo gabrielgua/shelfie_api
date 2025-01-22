@@ -20,7 +20,7 @@ public class Movement {
     @ManyToOne(cascade = CascadeType.ALL)
     private Product product;
 
-    private int movementQuantity;
+    private Integer movementQuantity;
 
     @Enumerated(EnumType.STRING)
     private MovementType movementType;

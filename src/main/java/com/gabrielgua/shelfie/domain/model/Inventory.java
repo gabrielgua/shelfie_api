@@ -22,8 +22,8 @@ public class Inventory {
 
     private Boolean active;
 
-    private int currentQuantity;
-    private int minimumQuantity;
+    private Integer currentQuantity;
+    private Integer minimumQuantity;
 
     @UpdateTimestamp
     private OffsetDateTime lastUpdated;
