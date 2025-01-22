@@ -19,6 +19,11 @@ public class ProductService {
         return repository.findAll();
     }
 
+    @Transactional(readOnly = true)
+    public Product findById(Long productId) {
+        return repository.findById(productId).orElseThrow(() -> new RuntimeException("Not found for id"));
+    }
+
     @Transactional
     public Product save(Product product) {
         return repository.save(product);

@@ -1,4 +1,4 @@
-package com.gabrielgua.shelfie.api.assembler;
+package com.gabrielgua.shelfie.api.mapper;
 
 import com.gabrielgua.shelfie.api.model.ProductModel;
 import com.gabrielgua.shelfie.api.model.ProductRequest;
